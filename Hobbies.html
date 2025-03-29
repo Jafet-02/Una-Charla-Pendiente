@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hobbies</title>
+    <!-- Enlace a la hoja de estilos de Font Awesome para usar iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Font Awesome para los iconos -->
+
+    <!-- Enlace a la hoja de estilos de Bootstrap Icons para usar iconos adicionales -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+
+    <!-- Enlace a la hoja de estilos de Bootstrap 5.3.0 para aplicar estilos y componentes de Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+        /* Definición de colores principales para la página */
+        :root {
+            --primary-color: #002D62; /* Azul oscuro principal */
+            --secondary-color: #0073E6; /* Azul secundario */
+            --background-color: #F0F8FF; /* Fondo en tono azul claro */
+            --text-color: #333; /* Color del texto principal */
+            --content-bg: #FFFFFF; /* Fondo de la sección de contenido */
+            --shadow-color: rgba(0, 0, 0, 0.1); /* Color de la sombra para efectos visuales */
+            --hover-color: #005bb5; /* Color de hover para elementos interactivos */
+        }
+|       /* Estilo general del cuerpo de la página */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente principal */
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color); /* Color de fondo general */
+            color: var(--text-color); /* Color del texto */
+        }
+        /* Estilos para el encabezado */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--hover-color)); /* Degradado azul */
+            color: white; /* Texto en blanco */
+            padding: 25px; /* Espaciado interno */
+            text-align: center; /* Centrar el texto */
+            font-size: 30px; /* Tamaño de fuente */
+            font-weight: bold; /* Texto en negrita */
+            text-transform: uppercase; /* Convertir texto a mayúsculas */
+            letter-spacing: 1.5px; /* Espaciado entre letras */
+            box-shadow: 0 4px 8px var(--shadow-color); /* Sombra debajo del encabezado */
+        }
+        /* Estilos para la barra de navegación */
+        nav {
+            background-color: var(--secondary-color); /* Color azul secundario */
+            padding: 15px; /* Espaciado interno */
+            text-align: center; /* Centrar el texto */
+            box-shadow: 0 2px 6px var(--shadow-color); /* Sombra debajo del menú */
+        }
+         /* Estilos para los enlaces de navegación */
+        nav a {
+            color: white; /* Color del texto de los enlaces */
+            text-decoration: none; /* Sin subrayado */
+            margin: 20px; /* Margen entre enlaces */
+            font-size: 18px; /* Tamaño de fuente */
+            font-weight: bold; /* Negrita */
+            transition: color 0.3s, transform 0.2s; /* Efectos de transición */
+            display: inline-block; /* Mostrar en línea */
+            padding: 5px 10px; /* Espaciado interno */
+        }
+
+        /* Efecto al pasar el cursor sobre los enlaces de navegación */
+        nav a:hover {
+            color: var(--background-color); /* Cambia a color de fondo al pasar el cursor */
+            transform: scale(1.1); /* Efecto de zoom ligero */
+        }
+
+        section {
+            max-width: 900px; /* Ancho máximo del contenido */
+            margin: 40px auto; /* Centrar y agregar margen superior e inferior */
+            padding: 30px; /* Espaciado interno */
+            background-color: var(--content-bg); /* Fondo blanco */
+            box-shadow: 0 6px 15px var(--shadow-color); /* Sombra alrededor */
+            border-radius: 12px; /* Bordes redondeados */
+            transition: all 0.3s ease-in-out; /* Efecto de transición */
+            text-align: center;
+        }
+
+        h2 {
+            color: var(--secondary-color);
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        strong {
+            color: var(--hover-color);
+        }
+
+        /* Ajuste para los carruseles */
+        .carousel {
+        width: 280px; /* Ajusta el ancho del carrusel */
+        height: 400px; /* Ajusta la altura del carrusel */
+        margin: 0 auto; /* Centra el carrusel horizontalmente */
+        overflow: hidden; /* Asegura que las imágenes no se desborden del carrusel */
+        border-radius: 15px; /* Redondea las esquinas del carrusel */
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra en el carrusel */
+        }
+
+        /* Ajuste para el tamaño de las imágenes dentro del carrusel */
+        .carousel-item img {
+            width: 280px; /* Ajusta el ancho de la imagen al 100% del contenedor */
+            height: 400px; /* Ajusta la altura para que el carrusel sea vertical */
+            object-fit: cover; /* Ajusta las imágenes para que cubran el área del carrusel sin distorsionarse */
+            box-shadow: 0 4px 10px var(--shadow-color); /* Sombra en las imágenes */
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Transición suave al hacer hover */
+        }
+
+        /* Efecto al pasar el cursor sobre las imágenes */
+        .carousel-item img:hover {
+            transform: scale(1.05); /* Efecto de zoom ligero */
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); /* Sombra más fuerte */
+        }
+
+        /* Contenedor para el video y el ícono de play de Baile*/
+        .video-container {
+            position: relative;
+            width: 100%;
+            height: auto;
+        }
+
+        /* Estilo para el icono de Play */
+        .play-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 50px;
+            color: white;
+            opacity: 1;
+            transition: opacity 0.3s ease;
+        }
+
+        /* Desvanecer el ícono cuando el video se reproduce */
+        video:playing + .play-icon {
+            opacity: 0;
+        }
+
+         /* Estilos para el ícono de los artistas en (Musica) */
+        .music-link {
+        position: relative;
+        display: block;
+        }
+
+        .overlay {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 10px;
+            border-radius: 10px;
+            font-size: 14px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .music-link:hover .overlay {
+            background: rgba(255, 0, 0, 0.8);
+        }
+
+        .overlay i {
+            margin-right: 5px;
+        }
+        /* Estilos para el pie de página */
+        footer {
+            background: linear-gradient(135deg, var(--primary-color), var(--hover-color)); /* Degradado azul */
+            color: white; /* Color del texto */
+            text-align: center; /* Centrar todo el contenido */
+            padding: 18px; /* Espaciado interno */
+            font-size: 14px; /* Tamaño del texto */
+            font-weight: bold; /* Texto en negrita */
+            position: relative;
+            bottom: 0;
+            width: 100%; /* Ocupa todo el ancho */
+            box-shadow: 0 -2px 6px var(--shadow-color); /* Sombra superior */
+            display: flex;
+            flex-direction: column; /* Asegura que los elementos estén en columna */
+            align-items: center; /* Centra todos los elementos horizontalmente */
+            justify-content: center; /* Alinea los elementos en el centro */
+        }
+
+        footer .footer-text {
+            text-align: center; /* Centrar el texto */
+            margin-bottom: 10px; /* Espacio entre el texto y los iconos */
+        }
+
+        .footer-links a {
+            color: white; /* Cambia el color de los iconos a blanco */
+            margin: 0 10px;
+            font-size: 30px; /* Ajusta el tamaño de los iconos */
+            transition: color 0.3s ease-in-out;
+        }
+
+        .footer-links a:hover {
+            color: var(--background-color); /* Cambio de color al pasar el ratón, si lo deseas */
+        }
+        .footer-links i {
+        font-size: 30px; /* Ajusta el tamaño de los iconos */
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        Una Charla Pendiente
+    </header>
+
+    <nav>
+        <a href="index.html"><i class="bi bi-house-door-fill"></i> Inicio</a>
+        <a href="Sobre mi.html"><i class="bi bi-person-fill"></i> Sobre Mí</a>
+        <a href="hobbies.html"><i class="bi bi-controller"></i> Hobbies</a>
+        <a href="acdemico.html"><i class="bi bi-laptop"></i> Academico</a>
+        <a href="contacto.html"><i class="bi bi-envelope-fill"></i> Contacto</a>
+    </nav>
+    <section id="hobbies">
+        <h2>Mis Hobbies:</h2>
+        <p>Cada hobby no solo me complementa, sino que eleva mi espíritu y fortalece mi carácter, porque, al final, todo lo que hago, lo hago mejor.</p>
+        
+        <ul>
+            <li><strong>Gimnasio:</strong> El gimnasio es mi segundo hogar, donde me desafío físicamente y encuentro equilibrio entre mente y cuerpo. Cada sesión me ayuda a superarme y a ser más fuerte, tanto mental como físicamente, para enfrentar cualquier reto con determinación.</li>
+        </ul>
+    
+        <!-- Carrusel para Gimnasio -->
+        <div id="carouselGimnasio" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="ImagesPPrincipal/Gym1.jpeg" class="d-block w-100" alt="Gimnasio Imagen 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="ImagesPPrincipal/Gym2.jpeg" class="d-block w-100" alt="Gimnasio Imagen 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="ImagesPPrincipal/Gym3.jpeg" class="d-block w-100" alt="Gimnasio Imagen 3">
+                </div>
+                <div class="carousel-item">
+                    <img src="ImagesPPrincipal/Gym4.jpeg" class="d-block w-100" alt="Gimnasio Imagen 4">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselGimnasio" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselGimnasio" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+    
+        <ul>
+            <li><strong>Chambelán los fines de semana:</strong> Más allá de la responsabilidad de ser el centro de atención, lo disfruto porque cada evento es una oportunidad para estar con mis amigos. Somos un grupo unido, y cada celebración se convierte en una excusa perfecta para divertirnos, bailar, y crear recuerdos juntos. La amistad es lo que hace especiales estos momentos, porque con ellos todo se convierte en una fiesta!</li>
+
+        </ul>
+
+     <!-- Carrusel para Baile -->
+<div id="carouselBaile" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <!-- Primer Item con video -->
+        <div class="carousel-item active" onmouseenter="playVideo()" onmouseleave="pauseVideo()">
+            <div class="video-container">
+                <video id="baileVideo" class="d-block w-100" controls>
+                    <source src="ImagesPPrincipal/baile1.mp4" type="video/mp4">
+                    Tu navegador no soporta el elemento de video.
+                </video>
+                <div class="play-icon">
+                    <i class="fas fa-play"></i> <!-- Icono de Play -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Otros Items con imágenes -->
+        <div class="carousel-item">
+            <img src="ImagesPPrincipal/baile2.jpeg" class="d-block w-100" alt="Baile Imagen 2">
+        </div>
+        <div class="carousel-item">
+            <img src="ImagesPPrincipal/baile3.jpeg" class="d-block w-100" alt="Baile Imagen 3">
+        </div>
+        <div class="carousel-item">
+            <img src="ImagesPPrincipal/baile4.jpeg" class="d-block w-100" alt="Baile Imagen 4">
+        </div>
+    </div>
+
+    <!-- Controles del Carrusel -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselBaile" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselBaile" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+    </button>
+</div>
+
+<!-- JavaScript para controlar el video y el ícono -->
+<script>
+    // Función para reproducir el video
+    function playVideo() {
+        var video = document.getElementById("baileVideo");
+        var playIcon = document.querySelector(".play-icon");
+        video.play();
+        playIcon.style.opacity = 0;  // Desvanecer el ícono al reproducir
+    }
+
+    // Función para pausar el video
+    function pauseVideo() {
+        var video = document.getElementById("baileVideo");
+        var playIcon = document.querySelector(".play-icon");
+        video.pause();
+        playIcon.style.opacity = 1;  // Mostrar el ícono de nuevo cuando se pausa
+    }
+</script>
+    
+        <ul>
+        <li><strong>Música:</strong> La banda, los corridos y el reggaetón son parte de mi día a día. Ya sea para relajarme, motivarme o simplemente disfrutar el momento, siempre hay una canción perfecta para cada ocasión. Me gusta descubrir nuevos artistas y dejar que la música marque el ritmo de mi vida, estos son algunos de mis favoritos.</li>  
+
+        <!-- Carrusel para Géneros Musicales -->
+        <div id="carouselGeneros" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <!-- Género 1 - Corridos Tumbados -->
+                <div class="carousel-item active">
+                    <a href="https://open.spotify.com/intl-es/artist/0elWFr7TW8piilVRYJUe4P?si=uXsyWKtFSvuvu1reLtGLhg" target="_blank" class="music-link">
+                        <img src="ImagesPPrincipal/Musica1.jpeg" class="d-block w-100" alt="Género Corridos Tumbados">
+                           <div class="overlay">
+                            <i class="fas fa-music"></i> Clic para ir al artista
+                        </div>
+                    </a>
+                </div>
+                <!-- Género 2 - Corridos -->
+                <div class="carousel-item">
+                    <a href="https://open.spotify.com/intl-es/artist/12GqGscKJx3aE4t07u7eVZ?si=NbXRizC4SM2wZnGoB-CBVQ" target="_blank" class="music-link">
+                        <img src="ImagesPPrincipal/Musica2.jpeg" class="d-block w-100" alt="Corridos">
+                        <div class="overlay">
+                            <i class="fas fa-music"></i> Clic para ir al artista
+                        </div>
+                    </a>
+                </div>
+                <!-- Género 3 - Corridos Viejos -->
+                <div class="carousel-item">
+                    <a href="https://open.spotify.com/intl-es/artist/2Lxa3SFNEW0alfRvtdXOul?si=5lFRUBC3SjeO_oE3Jd2k1w" target="_blank" class="music-link">
+                        <img src="ImagesPPrincipal/Musica3.jpeg" class="d-block w-100" alt="Género Corridos Viejos">
+                        <div class="overlay">
+                            <i class="fas fa-music"></i> Clic para ir al artista
+                        </div>
+                    </a>
+                </div>
+                <!-- Género 4 - Banda -->
+                <div class="carousel-item">
+                    <a href="https://open.spotify.com/intl-es/artist/5bSfBBCxY8QAk4Pifveisz?si=SuUJZXbkSlSD28No6H0oig" target="_blank" class="music-link">
+                        <img src="ImagesPPrincipal/Musica4.jpeg" class="d-block w-100" alt="Género Banda">
+                        <div class="overlay">
+                            <i class="fas fa-music"></i> Clic para ir al artista
+                        </div>
+                    </a>
+                </div>
+                <!-- Género 5 - Grupo -->
+                <div class="carousel-item">
+                    <a href="https://open.spotify.com/intl-es/artist/1dKdetem2xEmjgvyymzytS?si=LIUWEAoQRq-DL03LxiYHcA" target="_blank" class="music-link">
+                        <img src="ImagesPPrincipal/Musica5.jpeg" class="d-block w-100" alt="Género Grupo">
+                        <div class="overlay">
+                            <i class="fas fa-music"></i> Clic para ir al artista
+                        </div>
+                    </a>
+                </div>
+                <!-- Género 6 - Reggaeton -->
+                <div class="carousel-item">
+                    <a href="https://open.spotify.com/intl-es/artist/2LRoIwlKmHjgvigdNGBHNo?si=D06ZZThCTOO5qzrZISlyLQ" target="_blank" class="music-link">
+                        <img src="ImagesPPrincipal/Musica6.jpeg" class="d-block w-100" alt="Género Reggaeton">
+                        <div class="overlay">
+                            <i class="fas fa-music"></i> Clic para ir al artista
+                        </div>
+                    </a>
+                </div>
+                <!-- Género 7 - Reggaeton Mexa -->
+                <div class="carousel-item">
+                    <a href="https://open.spotify.com/intl-es/artist/6BV37tKh6pY97mnNdTCzly?si=8oyPt4bQTBGorPIZzd53EA" target="_blank" class="music-link">
+                        <img src="ImagesPPrincipal/musica7.jpeg" class="d-block w-100" alt="Género Reggaeton Mexa">
+                        <div class="overlay">
+                            <i class="fas fa-music"></i> Clic para ir al artista
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Flechas de navegación -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselGeneros" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselGeneros" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+         <!-- Agregar FontAwesome para los íconos -->
+        <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>       
+
+    <!-- Controles del Carrusel -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselGeneros" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselGeneros" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+    </button>
+</div>
+    <!-- Sección de Películas Favoritas -->
+    <ul>
+        <li><strong>Películas:</strong> El cine es una de mis mayores pasiones. Me encanta la adrenalina de las batallas épicas, los enfrentamientos entre héroes y villanos, y las historias que dejan huella. Desde los Vengadores hasta Spider-Man y Venom, estas películas han marcado mi vida. Aquí están algunas de mis favoritas con sus tráilers.</li>
+    </ul>
+<!-- Carrusel para Películas -->
+<div id="carouselPeliculas" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <!-- Spiderman No Way Home -->
+        <div class="carousel-item active">
+            <a href="https://www.youtube.com/watch?v=klXC_wDuK0c" target="_blank" class="movie-link">
+                <img src="ImagesPPrincipal/pelicula1.jpg" class="d-block w-100" alt="Spiderman No Way Home">
+                <div class="overlay">
+                    <i class="fas fa-play"></i> Ver tráiler
+                </div>
+            </a>
+        </div>
+        <!-- Iron Man 3 -->
+        <div class="carousel-item">
+            <a href="https://www.youtube.com/watch?v=MPwsK6CI4dQ" target="_blank" class="movie-link">
+                <img src="ImagesPPrincipal/pelicula2.jpg" class="d-block w-100" alt="Iron Man 3">
+                <div class="overlay">
+                    <i class="fas fa-play"></i> Ver tráiler
+                </div>
+            </a>
+        </div>
+        <!-- Capitán América: Civil War -->
+        <div class="carousel-item">
+            <a href="https://www.youtube.com/watch?v=BOtZmGrNkkU" target="_blank" class="movie-link">
+                <img src="ImagesPPrincipal/pelicula3.jpg" class="d-block w-100" alt="Capitán América: Civil War">
+                <div class="overlay">
+                    <i class="fas fa-play"></i> Ver tráiler
+                </div>
+            </a>
+        </div>
+        <!-- Avengers: Infinity War -->
+        <div class="carousel-item">
+            <a href="https://www.youtube.com/watch?v=3xk11d9hjp0" target="_blank" class="movie-link">
+                <img src="ImagesPPrincipal/pelicula4.jpg" class="d-block w-100" alt="Avengers: Infinity War">
+                <div class="overlay">
+                    <i class="fas fa-play"></i> Ver tráiler
+                </div>
+            </a>
+        </div>
+        <!-- Avengers: Endgame -->
+        <div class="carousel-item">
+            <a href="https://www.youtube.com/watch?v=KdL8ucqi1F8" target="_blank" class="movie-link">
+                <img src="ImagesPPrincipal/Pelicula5.jpg" class="d-block w-100" alt="Avengers: Endgame">
+                <div class="overlay">
+                    <i class="fas fa-play"></i> Ver tráiler
+                </div>
+            </a>
+        </div>
+        <!-- Spiderman 3 -->
+        <div class="carousel-item">
+            <a href="https://www.youtube.com/watch?v=IK2IOPm9FaU" target="_blank" class="movie-link">
+                <img src="ImagesPPrincipal/Pelicula6.jpg" class="d-block w-100" alt="Spiderman 3">
+                <div class="overlay">
+                    <i class="fas fa-play"></i> Ver tráiler
+                </div>
+            </a>
+        </div>
+        <!-- Venom -->
+        <div class="carousel-item">
+            <a href="https://www.youtube.com/watch?v=3NRlM-fMKA0" target="_blank" class="movie-link">
+                <img src="ImagesPPrincipal/pelicula7.jpeg" class="d-block w-100" alt="Venom">
+                <div class="overlay">
+                    <i class="fas fa-play"></i> Ver tráiler
+                </div>
+            </a>
+        </div>
+        <!-- El Sorprendente Hombre-Araña 2 -->
+        <div class="carousel-item">
+            <a href="https://www.youtube.com/watch?v=U7vjPGJ8THU" target="_blank" class="movie-link">
+                <img src="ImagesPPrincipal/pelicula8.jpeg" class="d-block w-100" alt="El Sorprendente Hombre-Araña 2">
+                <div class="overlay">
+                    <i class="fas fa-play"></i> Ver tráiler
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <!-- Botones de navegación -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselPeliculas" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselPeliculas" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+    </button>
+</div>
+
+        <ul>
+            <li><strong>Disfrutar en pareja:</strong> No todo se trata de estar solo en mis logros. También valoro profundamente los momentos compartidos con Fer mi novia, quien es mi compañera de aventuras. Ya sea una cena tranquila, una película, o una aventura espontánea, esos momentos se convierten en recuerdos que enriquecen mi vida y me recuerdan que la compañía es un tesoro invaluables, es uno de los placeres más grandes que puedo disfrutar.</li>
+        </ul>
+    
+<!-- Carrusel para En Pareja -->
+<div id="carouselEnPareja" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="ImagesPPrincipal/En pareja1.jpeg" class="d-block w-100" alt="EnPareja Imagen1">
+        </div>
+        <div class="carousel-item">
+            <img src="ImagesPPrincipal/En pareja2.jpeg" class="d-block w-100" alt="EnPareja Imagen2">
+        </div>
+        <div class="carousel-item">
+            <img src="ImagesPPrincipal/En pareja3.jpeg" class="d-block w-100" alt="EnPareja Imagen3">
+        </div>
+        <div class="carousel-item">
+            <img src="ImagesPPrincipal/En pareja4.jpeg" class="d-block w-100" alt="EnPareja Imagen4">
+        </div>
+    </div>
+
+    <!-- Controles del Carrusel -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselEnPareja" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselEnPareja" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+    </button>
+</div>
+    
+        <p>“Lo que hago, lo hago con pasión y siempre tratando de mejorar. ¿Quieres ser parte de mi viaje? Sígueme y acompáñame en cada paso.”.</p>
+    </section>
+
+    <!-- Pie de página con iconos de redes sociales y marca de verificación -->
+    <footer>
+        <div class="footer-text">
+            <p>Milton Jafet Flores Coba | Instituto Tecnológico de Puebla <i class="bi bi-patch-check-fill"></i></p>
+        </div>
+        <div class="footer-links">
+            <a href="https://www.instagram.com/_jaafet_?igsh=Zm1oMW1odnQzbGdj&utm_source=qr" target="_blank"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.facebook.com/share/1E9d3kg4yt/?mibextid=wwXIfr" target="_blank"><i class="bi bi-facebook"></i></a>
+            <a href="mailto:jafet-02@hotmail.es"><i class="bi bi-envelope-fill"></i></a>
+        </div>
+    </footer>
+
+    <!-- Scripts necesarios para los carruseles -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
