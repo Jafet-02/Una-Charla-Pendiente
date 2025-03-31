@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Una Charla Pendiente</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #002D62;
+            --secondary-color: #0073E6;
+            --background-color: #F0F8FF;
+            --text-color: #333;
+            --content-bg: #FFFFFF;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+            --hover-color: #005bb5;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+        }
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--hover-color));
+            color: white;
+            padding: 25px;
+            text-align: center;
+            font-size: 30px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            box-shadow: 0 4px 8px var(--shadow-color);
+        }
+        nav {
+            background-color: var(--secondary-color);
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 2px 6px var(--shadow-color);
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            transition: color 0.3s, transform 0.2s;
+            display: inline-block;
+            padding: 5px 10px;
+        }
+        nav a:hover {
+            color: var(--background-color);
+            transform: scale(1.1);
+        }
+        main {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 30px;
+            background-color: var(--content-bg);
+            box-shadow: 0 6px 15px var(--shadow-color);
+            border-radius: 12px;
+            transition: all 0.3s ease-in-out;
+            text-align: center;
+        }
+        footer {
+            background: linear-gradient(135deg, var(--primary-color), var(--hover-color));
+            color: white;
+            text-align: center;
+            padding: 18px;
+            font-size: 14px;
+            font-weight: bold;
+            width: 100%;
+            box-shadow: 0 -2px 6px var(--shadow-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        footer .footer-text {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .footer-links a {
+            color: white;
+            margin: 0 10px;
+            font-size: 30px;
+            transition: color 0.3s ease-in-out;
+        }
+        .footer-links a:hover {
+            color: var(--background-color);
+        }
+        .footer-links i {
+            font-size: 30px;
+        }
+
+        /* Ajustes del carrusel */
+        .carousel {
+            max-width: 600px; /* Ajusta el tamaño del carrusel para que no ocupe todo el ancho */
+            margin: 0 auto; /* Centra el carrusel horizontalmente */
+            border-radius: 15px; /* Mantén las esquinas redondeadas */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Mantén la sombra */
+            overflow: hidden; /* Asegura que las imágenes no se desborden */
+        }
+
+        /* Ajuste en el tamaño de las imágenes del carrusel */
+        .carousel-item img {
+            width: 100%; /* Hace que las imágenes ocupen todo el ancho del contenedor */
+            height: 350px; /* Define una altura fija */
+            object-fit: cover; /* Hace que la imagen cubra todo el espacio sin distorsionarse */
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efecto de transición */
+        }
+
+        /* Ajuste de las descripciones del carrusel */
+        .carousel-caption {
+            color: white !important; /* Mantiene el color de texto blanco */
+            font-size: 18px; /* Tamaño de fuente adecuado */
+            font-weight: bold; /* Negrita */
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Sombra para mejorar la visibilidad del texto */
+        }
+
+        .carousel-indicators button {
+        background-color: white !important; /* Cambia el color de las rayitas a blanco */
+        }
+
+        .carousel-indicators .active {
+            background-color: var(--primary-color); /* Mantiene el color activo como el color principal */
+        }
+
+        /* Ajuste para el texto del carrusel en pantallas pequeñas */
+        @media (max-width: 768px) {
+            .carousel {
+                max-width: 100%; /* Asegura que el carrusel ocupe todo el ancho en pantallas pequeñas */
+                height: auto; /* Ajusta la altura automáticamente */
+            }
+            .carousel-item img {
+                height: 250px; /* Menor altura en pantallas pequeñas */
+            }
+        }
+
+        /* Estilo para la tarjeta de Sobre Mi */
+        .card {
+            margin: 20px auto; /* Centra la tarjeta con margen de 20px arriba y abajo */
+            width: 80%; /* Establece el ancho al 80% del contenedor */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil en la tarjeta */
+            border-radius: 10px; /* Bordes redondeados de 10px */
+            padding: 20px; /* Relleno de 20px dentro de la tarjeta */
+            background-color: var(--content-bg); /* Fondo con el color definido en la variable */
+            transition: all 0.3s ease; /* Transición suave para cambios de estilo */
+        }
+
+        .card h5 {
+            font-size: 24px; /* Tamaño de fuente 24px */
+            font-weight: bold; /* Negrita */
+            margin-bottom: 10px; /* Margen de 10px debajo */
+        }
+
+        .card p {
+            font-size: 16px; /* Tamaño de fuente 16px */
+            line-height: 1.6; /* Altura de línea de 1.6 */
+        }
+
+        .card ul {
+            list-style: none; /* Elimina los puntos de la lista */
+            padding-left: 0; /* Elimina el relleno izquierdo */
+        }
+
+        .card ul li {
+            margin-bottom: 15px; /* Margen de 15px debajo de cada ítem */
+        }
+    </style>
+</head>
+<body>
+    <header>Una Charla Pendiente</header>
+    <nav>
+        <a href="index.html"><i class="bi bi-house-door-fill"></i> Inicio</a>
+        <a href="sobre mi.html"><i class="bi bi-person-fill"></i> Sobre Mí</a>
+        <a href="hobbies.html"><i class="bi bi-controller"></i> Hobbies</a>
+        <a href="academico.html"><i class="bi bi-laptop"></i> Académico</a>
+        <a href="contacto.html"><i class="bi bi-envelope-fill"></i> Contacto</a>
+    </nav>
+    <section id="hobbies">
+        <div class="card">
+            <h5>Sobre Mi:</h5>
+            <p>A continuación, te platicaré un poco sobre mí y lo que me define.</p>
+            <ul>
+                <li>Soy Milton Jafet Flores Coba, nací el 5 de junio de 2000 en Puebla de Zaragoza. Hijo de Felipe Flores Valdez y María Antonieta Coba de La Luz, y hermano de Marlin Alexandra Flores Coba. Actualmente, estudio Ingeniería en Tecnologías de la Información y la Comunicación en el Instituto Tecnológico de Puebla.
+
+                    Tengo una mascota llamada Odie, un perro que siempre me acompaña y al que quiero profundamente. En cuanto a mis pasiones, soy seguidor de dos equipos que me llenan de orgullo: las Chivas, el club más grande de México, y el Real Madrid, el gigante de Europa. Los sigo con devoción, en los buenos y malos momentos, porque la pasión por el fútbol va más allá de las victorias.
+                    
+                    Uno de mis mayores sueños es viajar a Madrid, España, para sumergirme en su rica cultura, explorar su historia y disfrutar de la energía vibrante de la ciudad.
+                    
+                    Gracias por visitar mi página. Este es solo el comienzo de todo lo que estoy por lograr.</li>
+            </ul>
+        </div>
+    </section>
+
+    <main>
+        <!-- Carrusel de 7 imágenes -->
+        <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+            <!-- Indicadores del carrusel -->
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="5" aria-label="Slide 6"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="6" aria-label="Slide 7"></button>
+            </div>
+                        <!-- Imágenes del carrusel -->
+                        <div class="carousel-inner">
+                            <div class="carousel-item active" data-bs-interval="5000">
+                                <img src="ImagesPPrincipal/SobreMi1.jpeg" class="d-block w-100" alt="Puebla de Zaragoza">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>Puebla de Zaragoza</h5>
+                                    <p>Mi lugar de nacimiento, lleno de historia y tradiciones.</p>
+                                    <a href="https://maps.app.goo.gl/dRRK9pGn3o1hiozu6" target="_blank" class="btn btn-primary">
+                                        <i class="bi bi-geo-alt"></i> Ir a Ubicación
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="carousel-item" data-bs-interval="5000">
+                                <img src="ImagesPPrincipal/SobreMi2.png" class="d-block w-100" alt="Yo de bebé">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>Yo de bebé</h5>
+                                    <p>Mi primer viaje por la vida.</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item" data-bs-interval="5000">
+                                <img src="ImagesPPrincipal/SobreMi3.png" class="d-block w-100" alt="Mis padres">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>Mis papás</h5>
+                                    <p>Mis pilares, quienes me han guiado siempre.</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item" data-bs-interval="5000">
+                                <img src="ImagesPPrincipal/SobreMi4.png" class="d-block w-100" alt="Mi hermana">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>Mi hermana</h5>
+                                    <p>Ale, con quien siempre comparto momentos especiales.</p>
+                                    <a href="https://www.instagram.com/chivas" target="_blank" class="btn btn-danger">
+                                        <i class="bi bi-instagram"></i> Instagram
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="carousel-item" data-bs-interval="5000">
+                                <img src="ImagesPPrincipal/Sobre Mi5.png" class="d-block w-100" alt="Odie, mi mascota">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>Odie, mi mascota</h5>
+                                    <p>Siempre a mi lado, mi compañero fiel.</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item" data-bs-interval="5000">
+                                <img src="ImagesPPrincipal/SobreMi6.png" class="d-block w-100" alt="Chivas">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>Chivas</h5>
+                                    <p>El equipo de mis amores y el más grande de México.</p>
+                                    <a href="https://www.instagram.com/chivas/" target="_blank" class="btn btn-danger">
+                                        <i class="bi bi-instagram"></i> Instagram
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="carousel-item" data-bs-interval="5000">
+                                <img src="ImagesPPrincipal/SobreMi7.jpeg" class="d-block w-100" alt="Real Madrid">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>Real Madrid</h5>
+                                    <p>El grande de Europa.</p>
+                                    <a href="https://www.instagram.com/realmadrid" target="_blank" class="btn btn-primary">
+                                        <i class="bi bi-instagram"></i> Instagram
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+            <!-- Controles del carrusel -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </main>
+
+ <!-- Pie de página con iconos de redes sociales y marca de verificación -->
+ <footer>
+    <div class="footer-text">
+        <p>Milton Jafet Flores Coba | Instituto Tecnológico de Puebla 2025 <i class="bi bi-patch-check-fill"></i></p>
+    </div>
+    <div class="footer-links">
+        <a href="https://www.instagram.com/_jaafet_?igsh=Zm1oMW1odnQzbGdj&utm_source=qr" target="_blank"><i class="bi bi-instagram"></i></a>
+        <a href="https://www.facebook.com/share/1E9d3kg4yt/?mibextid=wwXIfr" target="_blank"><i class="bi bi-facebook"></i></a>
+        <a href="mailto:jafet-02@hotmail.es"><i class="bi bi-envelope-fill"></i></a>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

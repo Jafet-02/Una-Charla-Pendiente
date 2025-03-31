@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academico</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #002D62;
+            --secondary-color: #0073E6;
+            --background-color: #F0F8FF;
+            --text-color: #333; 
+            --content-bg: #FFFFFF;
+            --hover-color: #005bb5;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+        }
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--hover-color));
+            color: white;
+            padding: 40px;
+            text-align: center;
+            font-size: 35px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            box-shadow: 0 4px 8px var(--shadow-color);
+        }
+        nav {
+            background-color: var(--secondary-color);
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 2px 6px var(--shadow-color);
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            transition: color 0.3s, transform 0.2s;
+            padding: 5px 10px;
+        }
+        nav a:hover, nav a.active {
+            color: var(--background-color);
+            transform: scale(1.1);
+        }
+        main {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 40px;
+            background-color: var(--content-bg);
+            box-shadow: 0 6px 15px var(--shadow-color);
+            border-radius: 12px;
+            transition: all 0.3s ease-in-out;
+            text-align: center;
+        }
+        .estudio {
+            margin-bottom: 40px;
+            padding: 20px;
+            background: var(--background-color);
+            border-left: 5px solid var(--secondary-color);
+            box-shadow: 0 4px 8px var(--shadow-color);
+            border-radius: 8px;
+            text-align: left;
+            position: relative;
+        }
+        .estudio h2 {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .ubicacion-btn {
+            display: block;
+            margin: 10px 0;
+            text-align: center;
+        }
+        footer {
+            background: linear-gradient(135deg, var(--primary-color), var(--hover-color));
+            color: white;
+            text-align: center;
+            padding: 18px;
+            font-size: 14px;
+            font-weight: bold;
+            width: 100%;
+            box-shadow: 0 -2px 6px var(--shadow-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        footer .footer-text {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .footer-links a {
+            color: white;
+            margin: 0 10px;
+            font-size: 30px;
+            transition: color 0.3s ease-in-out;
+        }
+        .footer-links a:hover {
+            color: var(--background-color);
+        }
+        .footer-links i {
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>Una Charla Pendiente</header>
+
+    <nav>
+        <a href="index.html"><i class="bi bi-house-door-fill"></i> Inicio</a>
+        <a href="sobre mi.html"><i class="bi bi-person-fill"></i> Sobre Mí</a>
+        <a href="hobbies.html"><i class="bi bi-controller"></i> Hobbies</a>
+        <a href="academico.html"><i class="bi bi-laptop"></i> Académico</a>
+        <a href="contacto.html"><i class="bi bi-envelope-fill"></i> Contacto</a>
+    </nav>
+    
+    <main>
+        <section>
+            <h1>Mi Trayectoria Académica</h1>
+
+            <div class="estudio">
+                <h2><i class="bi bi-geo-alt-fill text-danger"></i> Jardin de Niños</h2>
+                <p>Inicié mi educación en el Jardin de Niños de Bosques de San Sebastian , donde aprendí las bases del aprendizaje y la socialización.</p>
+                <div id="carouselKinder" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="ImagesPPrincipal/Kinder1.png" class="d-block w-100" alt="Kinder 1">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="ImagesPPrincipal/Kinder4.png" class="d-block w-100" alt="Kinder 2">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="ImagesPPrincipal/Kinder3.png" class="d-block w-100" alt="Kinder 3">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="ImagesPPrincipal/Kinder2.png" class="d-block w-100" alt="Kinder 4">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselKinder" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselKinder" data-bs-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </button>
+                </div>
+                <a href="https://maps.app.goo.gl/H5QKCR7aZaZSauLv9" target="_blank" class="btn btn-primary ubicacion-btn">Ver Ubicación</a>
+            </div>
+            
+            <div class="estudio">
+                <h2><i class="bi bi-geo-alt-fill text-danger"></i> Primaria</h2>
+                <p>Realicé mis estudios de primaria en la Gral Juan N. Mendez, en el turno Vespertino, donde adquirí conocimientos básicos en matemáticas, ciencias, español, geografia, e historia de México.</p>
+                <div id="carouselPrimaria" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="ImagesPPrincipal/Primaria1.png" class="d-block w-100" alt="Primaria 1">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="ImagesPPrincipal/Primaria2.png" class="d-block w-100" alt="Primaria 2">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselPrimaria" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselPrimaria" data-bs-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </button>
+                </div>
+                <a href="https://maps.app.goo.gl/NBBUnmtNJ2ebR7N99" target="_blank" class="btn btn-primary ubicacion-btn">Ver Ubicación</a>
+            </div>
+            
+            <div class="estudio">
+                <h2><i class="bi bi-geo-alt-fill text-danger"></i> Secundaria</h2>
+                <p>Estudié la secundaria en la Técnica Secundaria No. 50, donde adquirí conocimientos en informática y electrónica. Fue en esta etapa donde nació mi interés por las tecnologías, lo que más adelante definiría mi camino académico.</p>
+                <img src="ImagesPPrincipal/Secundaria1.png" class="d-block w-100" alt="Secundaria 1">
+                <a href="https://maps.app.goo.gl/KrzQqm14nzYCXaf26" target="_blank" class="btn btn-primary ubicacion-btn">Ver Ubicación</a>
+            </div>
+            
+            <div class="estudio">
+                <h2><i class="bi bi-geo-alt-fill text-danger"></i> Bachillerato</h2>
+                <p>Forme educación media superior en el Bachillerato Enrique Martínez Márquez, donde adquirí conocimientos fundamentales para mi formación académica</p>
+                <div id="carouselBachillerato" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="ImagesPPrincipal/Bachillerato1.png" class="d-block w-100" alt="Bachillerato 1">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="ImagesPPrincipal/Bachiller2.png" class="d-block w-100" alt="Bachillerato 2">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="ImagesPPrincipal/bachiller3.png" class="d-block w-100" alt="Bachillerato 3">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="ImagesPPrincipal/bachiller4.png" class="d-block w-100" alt="Bachillerato 4">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselBachillerato" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselBachillerato" data-bs-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </button>
+                </div>
+                <a href="https://maps.app.goo.gl/CZZBn5aYmD28awYc8" target="_blank" class="btn btn-primary ubicacion-btn">Ver Ubicación</a>
+            </div>
+            
+            <div class="estudio">
+                <h2><i class="bi bi-geo-alt-fill text-danger"></i> Educación Superior</h2>
+                <p>Actualmente, estudio la carrera de Ingeniería en Tecnologías de la Información y la Comunicación en el Instituto Tecnológico de Puebla.</p>
+                <div id="carouselUniversidad" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="ImagesPPrincipal/tec1.png" class="d-block w-100" alt="Universidad 1">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="ImagesPPrincipal/Tec2.png" class="d-block w-100" alt="Universidad 2">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="ImagesPPrincipal/tec3.png" class="d-block w-100" alt="Universidad 3">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="ImagesPPrincipal/tec4.png" class="d-block w-100" alt="Universidad 4">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselUniversidad" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselUniversidad" data-bs-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </button>
+                </div>
+                <a href="https://maps.app.goo.gl/GoGNe8b4p5t3ZnNg6" target="_blank" class="btn btn-primary ubicacion-btn">Ver Ubicación</a>
+            </div>
+
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <footer>
+        <div class="footer-text">
+            <p>Milton Jafet Flores Coba | Instituto Tecnológico de Puebla 2025 <i class="bi bi-patch-check-fill"></i></p>
+        </div>
+        <div class="footer-links">
+            <a href="https://www.instagram.com/_jaafet_?igsh=Zm1oMW1odnQzbGdj&utm_source=qr" target="_blank"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.facebook.com/share/1E9d3kg4yt/?mibextid=wwXIfr" target="_blank"><i class="bi bi-facebook"></i></a>
+            <a href="mailto:jafet-02@hotmail.es"><i class="bi bi-envelope-fill"></i></a>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+
+</body>
+</html>
