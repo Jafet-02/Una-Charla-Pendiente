@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academico</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+
+:root {
+            --primary-color: #002D62;
+            --secondary-color: #0073E6;
+            --background-color: #F0F8FF;
+            --text-color: #333; 
+            --content-bg: #FFFFFF;
+            --hover-color: #005bb5;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+        }
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--hover-color));
+            color: white;
+            padding: 40px;
+            text-align: center;
+            font-size: 35px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            box-shadow: 0 4px 8px var(--shadow-color);
+        }
+        nav {
+            background-color: var(--secondary-color);
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 2px 6px var(--shadow-color);
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            transition: color 0.3s, transform 0.2s;
+            padding: 5px 10px;
+        }
+        main {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 50px;
+            background: linear-gradient(135deg, #ffffff, #f8f9fa);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease-in-out;
+        }
+        main:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .star-rating {
+            direction: rtl;
+            font-size: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 5px;
+            transition: all 0.3s ease-in-out;
+        }
+        .star-rating input {
+            display: none;
+        }
+        .star-rating label {
+            color: #ccc;
+            cursor: pointer;
+            transition: color 0.3s, transform 0.2s;
+        }
+        .star-rating input:checked ~ label,
+        .star-rating label:hover,
+        .star-rating label:hover ~ label {
+            color: gold;
+            transform: scale(1.1);
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
+        }
+        footer {
+            background: linear-gradient(135deg, var(--primary-color), var(--hover-color));
+            color: white;
+            text-align: center;
+            padding: 18px;
+            font-size: 14px;
+            font-weight: bold;
+            width: 100%;
+            box-shadow: 0 -2px 6px var(--shadow-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        footer .footer-text {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .footer-links a {
+            color: white;
+            margin: 0 10px;
+            font-size: 30px;
+            transition: color 0.3s ease-in-out;
+        }
+        .footer-links a:hover {
+            color: var(--background-color);
+        }
+        .footer-links i {
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <header>Una Charla Pendiente</header>
+
+    <nav>
+        <a href="index.html"><i class="bi bi-house-door-fill"></i> Inicio</a>
+        <a href="sobre mi.html"><i class="bi bi-person-fill"></i> Sobre Mí</a>
+        <a href="hobbies.html"><i class="bi bi-controller"></i> Hobbies</a>
+        <a href="academico.html"><i class="bi bi-laptop"></i> Académico</a>
+        <a href="contacto.html"><i class="bi bi-envelope-fill"></i> Contacto</a>
+    </nav>
+
+    <main>
+        <h2 class="text-center mb-4">Contáctame</h2>
+        <form action="mailto:jafet-02@hotmail.es" method="post" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label for="nombre" class="form-label">Nombre Completo:</label>
+                <input type="text" class="form-control" id="nombre" name="nombre" required>
+            </div>
+            <div class="mb-3">
+                <label for="edad" class="form-label">Edad:</label>
+                <input type="number" class="form-control" id="edad" name="edad" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Sexo:</label><br>
+                <div class="form-check form-check-inline">
+                    <input type="radio" class="form-check-input" name="sexo" value="Masculino" id="sexoM" required>
+                    <label class="form-check-label" for="sexoM">Masculino</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="radio" class="form-check-input" name="sexo" value="Femenino" id="sexoF" required>
+                    <label class="form-check-label" for="sexoF">Femenino</label>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="nivel_estudios" class="form-label">Nivel de Estudios:</label>
+                <input type="text" class="form-control" id="nivel_estudios" name="nivel_estudios" required>
+            </div>
+            <div class="mb-3">
+                <label for="universidad" class="form-label">Universidad:</label>
+                <input type="text" class="form-control" id="universidad" name="universidad">
+            </div>
+            <div class="mb-3">
+                <label for="experiencia" class="form-label">Experiencia Laboral:</label>
+                <textarea class="form-control" id="experiencia" name="experiencia" rows="3"></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="foto" class="form-label">Adjuntar Foto:</label>
+                <input type="file" class="form-control" id="foto" name="foto" accept="image/*">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Calificación de mi página:</label>
+                <div class="star-rating">
+                    <input type="radio" id="star5" name="rating" value="5"><label for="star5">&#9733;</label>
+                    <input type="radio" id="star4" name="rating" value="4"><label for="star4">&#9733;</label>
+                    <input type="radio" id="star3" name="rating" value="3"><label for="star3">&#9733;</label>
+                    <input type="radio" id="star2" name="rating" value="2"><label for="star2">&#9733;</label>
+                    <input type="radio" id="star1" name="rating" value="1"><label for="star1">&#9733;</label>
+                </div>
+            </div>
+            
+            <!-- Botones centrados y alineados -->
+            <div class="d-flex justify-content-center">
+                <button type="submit" class="btn btn-primary me-2">Enviar</button>
+                <button type="reset" class="btn btn-outline-secondary">Borrar</button>
+            </div>
+        </form>
+    </main>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <footer>
+        <div class="footer-text">
+            <p>Milton Jafet Flores Coba | Instituto Tecnológico de Puebla 2025 <i class="bi bi-patch-check-fill"></i></p>
+        </div>
+        <div class="footer-links">
+            <a href="https://www.instagram.com/_jaafet_?igsh=Zm1oMW1odnQzbGdj&utm_source=qr" target="_blank"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.facebook.com/share/1E9d3kg4yt/?mibextid=wwXIfr" target="_blank"><i class="bi bi-facebook"></i></a>
+            <a href="mailto:jafet-02@hotmail.es"><i class="bi bi-envelope-fill"></i></a>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+
+</body>
+</html>
